@@ -6,5 +6,10 @@ will be upgraded automatically.
 keep track of exact version.
 5. Transitive dependency : We only installed parcel but many other packages gets installed 
 in our project because parcel as a project need them as dependencies to function.
+6. If you have package.json and package-lock.json in your project, you can re generate 
+all your node modules. command : npm install
+7. npm - we are just calling it to install the packages
+npx - we are calling this command to execute the packages
+8. CDN links are not the prefered way to bring the REACT library into our project.
 
 

@@ -1,0 +1,10 @@
+1. NPM is used for dependency management and package management.
+2. There are 2 types of dependencies which are installed : 1) Dev dependency 2) Normal dependency
+3. In version number ^ means minor version will be upgraded automatically, ~ means major version
+will be upgraded automatically.
+4. package.json will keep track of approximate dependencies version while package-lock.json will
+keep track of exact version.
+5. Transitive dependency : We only installed parcel but many other packages gets installed 
+in our project because parcel as a project need them as dependencies to function.
+
+

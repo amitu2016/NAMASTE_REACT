@@ -23,3 +23,27 @@
     margin: 10px;
     padding: 10px;
 }
+
+.rest-card {
+    margin: 5px;
+    padding: 5px;
+    width: 250px;
+}
+
+.rest-card:hover {
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.search {
+    padding: 10px;
+}
+
+.res-logo{
+    width: 100%;
+}
+
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+}

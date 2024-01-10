@@ -69,3 +69,7 @@
     padding: 0 20px;
     cursor: pointer;
 }
+
+.filter {
+    display: flex;
+}

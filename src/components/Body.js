@@ -15,21 +15,19 @@ const Body = () => {
 
     const fetchData = async () => {
         const data = await fetch(
-            "https://swiggy-api-bypass-cors.vercel.app/api/restaurants?lat=19.025330676643726&lng=73.0548236544475"
+            "https://swiggy-api-bypass-cors.vercel.app/api/restaurants?lat=19.049391&lng=73.065269"
             );
 
             const json = await data.json();
+            console.log(json)
 
-            //console.log(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants)
+            console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
-            setListOfRestaurents(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+            setListOfRestaurents(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
 
-    if (listOfRestaurents.length === 0) {
-        return <Shimmer />
-    }
 
-    return (
+    return listOfRestaurents.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter">
                <button className="filter-btn" onClick={

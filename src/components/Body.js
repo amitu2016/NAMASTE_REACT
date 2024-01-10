@@ -53,7 +53,7 @@ const Body = () => {
                    const filteredList = listOfRestaurents.filter(
                         (res) => res.info.avgRating > 4
                     );
-                    setListOfRestaurents(filteredList);
+                    setFilteredRestaurent(filteredList);
                 }}>Top Rated Restaurants</button>
             </div>
             <div className="res-container">

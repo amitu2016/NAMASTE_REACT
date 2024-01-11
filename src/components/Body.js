@@ -1,6 +1,8 @@
 import RestaurentCard from "./RestaurentCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import { RESTAURANTS_API } from "../utils/constants";
 
 
 const Body = () => {
@@ -18,7 +20,7 @@ const Body = () => {
 
     const fetchData = async () => {
         const data = await fetch(
-            "https://swiggy-api-bypass-cors.vercel.app/api/restaurants?lat=19.049391&lng=73.065269"
+            RESTAURANTS_API
             );
 
             const json = await data.json();
@@ -60,7 +62,7 @@ const Body = () => {
                 {
                     //For looping through all the restaurents using map
                     filteredRestaurent.map(restaurant => (
-                    <RestaurentCard key={restaurant.info.id} resData={restaurant} />
+                   <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}><RestaurentCard resData={restaurant} /></Link>
                 ))}
             </div>
         </div>

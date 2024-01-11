@@ -73,3 +73,8 @@
 .filter {
     display: flex;
 }
+
+a, a:visited, a:hover, a:focus, a:active {
+    color: black;
+    text-decoration: none;
+}

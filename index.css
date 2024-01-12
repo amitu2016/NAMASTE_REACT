@@ -78,3 +78,14 @@ a, a:visited, a:hover, a:focus, a:active {
     color: black;
     text-decoration: none;
 }
+
+.menucard {
+    margin: 5px;
+    padding: 5px;
+    width: 250px;
+}
+
+.menucard-container{
+    display: flex;
+    flex-wrap: wrap;
+}

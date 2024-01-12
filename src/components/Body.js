@@ -24,16 +24,16 @@ const Body = () => {
             );
 
             const json = await data.json();
-           // console.log(json)
+            //console.log(json)
 
-          //  console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+            //console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
             setListOfRestaurents(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
             setFilteredRestaurent(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
 
 
-    return listOfRestaurents.length === 0 ? <Shimmer /> : (
+    return listOfRestaurents?.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter">
                 <div className="search">
@@ -44,7 +44,7 @@ const Body = () => {
                     <button onClick={() => {
                         const filteredRestaurent = listOfRestaurents
                         .filter(
-                            (res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                            (res) => res?.info?.name?.toLowerCase().includes(searchText.toLowerCase())
                             );
                         
                         setFilteredRestaurent(filteredRestaurent);
@@ -53,7 +53,7 @@ const Body = () => {
                <button className="filter-btn" onClick={
                 () => {
                    const filteredList = listOfRestaurents.filter(
-                        (res) => res.info.avgRating > 4
+                        (res) => res?.info?.avgRating > 4
                     );
                     setFilteredRestaurent(filteredList);
                 }}>Top Rated Restaurants</button>
@@ -61,8 +61,8 @@ const Body = () => {
             <div className="res-container">
                 {
                     //For looping through all the restaurents using map
-                    filteredRestaurent.map(restaurant => (
-                   <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}><RestaurentCard resData={restaurant} /></Link>
+                    filteredRestaurent?.map(restaurant => (
+                   <Link key={restaurant?.info?.id} to={"/restaurants/"+restaurant?.info?.id}><RestaurentCard resData={restaurant} /></Link>
                 ))}
             </div>
         </div>
